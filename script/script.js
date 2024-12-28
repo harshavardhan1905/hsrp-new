@@ -156,3 +156,43 @@ document.getElementById('user-details-form')?.addEventListener('submit', (event)
     document.getElementById('result_address').textContent = address;
 });
 
+
+
+
+
+
+// Post Booking Details
+function saveBookingDetails(state, wheelerRegNo, chassisNo, engineNo) {
+    fetch('http://localhost:5000/api/booking-details', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ state, wheeler_reg_no: wheelerRegNo, chassis_no: chassisNo, engine_no: engineNo }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('Booking details saved:', data);
+        const bookingId = data.bookingId;
+        saveUserDetails(bookingId); // Save user details next
+    })
+    .catch((error) => console.error('Error saving booking details:', error));
+}
+
+// Post User Details
+function saveUserDetails(bookingId) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+
+    fetch('http://localhost:5000/api/user-details', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ booking_id: bookingId, name, email, phone, address }),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log('User details saved:', data);
+        alert('Data saved successfully!');
+    })
+    .catch((error) => console.error('Error saving user details:', error));
+}
