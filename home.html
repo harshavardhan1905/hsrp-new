@@ -1,0 +1,184 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSRP Online Booking</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <header>
+        <div class="head-sec">
+            <h1>HSRP Online Booking</h1>
+
+        <nav>
+            <a href="#home" onclick="window.location.href='index.html'">Home</a>
+            <a href="#contact-us" onclick="window.location.href='contact.html'">Contact Us</a>
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#refund-policy" onclick="window.location.href='refund_policy.html'">Refund Policy</a>
+            <a href="#terms-conditions" onclick="window.location.href='terms.html'">Terms & Conditions</a>
+        </nav>
+        </div>
+        <marquee behavior="scroll" direction="left" class="float-content">Booking Open for all states <span>Book Your High-Security Number Plates (HSRP) - HSRP Booking Now Open</span>  - It's now easier than ever to re-gister your Wheeler and Book the mandatory High-Security Number Plates</marquee>
+
+    </header>
+    
+    <div class="container">
+        <!-- Home Page -->
+        <!-- <div id="home" class="section active">
+            <h2>Welcome to HSRP</h2>
+            <p>Follow the steps to complete your booking process effortlessly.</p>
+            <button onclick="navigateTo('booking-details')">Start Booking</button>
+        </div> -->
+
+        <!-- Booking Page -->
+        <!-- <div id="booking-details" class="section active">
+            <h2>Booking Details</h2>
+            <form id="booking-details-form">
+                <label for="state">State: <spa class="req_field">*</spa></label>
+          
+                <select id="state" name="state" required>
+                    <option value="">Select Registration state</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana" selected>Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Puducherry">Puducherry</option>
+                </select>
+
+
+                <label for="whe_reg">Wheeler Reg No: <spa class="req_field">*</spa></label>
+                <input type="text" id="wh_r_no" name="wh_r_no" value="DLXXXXXX01" required>
+                <span style="font-size: 10px; margin-top: 3px;">(Reg No. Ex:- DLXXXXXX01)</span>
+
+                <label for="service">Chassis No.* (XXXXXX12345): <spa class="req_field">*</spa></label>
+                <input type="text" id="chassis_no" name="chassis_no" value="XXXXXX12345" required>
+                <span style="font-size: 10px; margin-top: 3px;"> (Kindly enter last 5 digits including special characters (eg "-,~,/,.)</span>
+
+                <label for="eng_no"> Engine No.* (XXXXXX12345)<spa class="req_field">*</spa></label>
+                <input type="text" id="eng_no" name="eng_no" value="XXXXXX12345" required>
+                <span style="font-size: 10px; margin-top: 3px;">(Kindly enter last 5 digits)</span>
+                <div class="buttons">
+                   <button type="button" onclick="navigateTo('booking-details')">Back to Home</button> 
+                    <button type="button" id="back-home" onclick="window.location.href='index.html'">Back to Home</button>
+
+                    
+                    <button type="button" id="to-user" >Continue</button>
+                </div>
+            </form>
+        </div> -->
+
+        <!-- User Details Page -->
+        <!-- <div id="user-details" class="section">
+            <h2>User Details</h2>
+            <form id="user-details-form">
+                <label for="name">Name: <spa class="req_field">*</spa></label>
+                <input type="text" id="name" name="name" value="john" placeholder="Your full name" required>
+
+                <label for="email">Email: <spa class="req_field">*</spa></label>
+                <input type="email" id="email" name="email" value="john@gmail.com" placeholder="example@domain.com" required>
+
+                <label for="phone">Phone: <spa class="req_field">*</spa></label>
+                <input type="tel" id="phone" name="phone" value="123" placeholder="123-456-7890" required>
+                
+                <label for="delivery">Delivery Address: <spa class="req_field">*</spa></label>
+                <input type="text" id="address" name="Address" value="hyd" placeholder="Address" required>
+
+
+                <div class="buttons">
+                    <button type="button" id="back-booking" onclick="navigateTo('booking-details')">Back to Booking</button>
+                    <button type="button" id="to-entered_details">Entered Details</button>
+                </div>
+            </form>
+        </div> -->
+
+        <!-- show the entered details -->
+         <!-- <div id="entered_details" class="section">
+            <h2>Entered Details:</h2>
+            <p><strong>State:</strong><span id="result_state"></span></p>
+            <p><strong>Wheeler Reg No:</strong><span id="result_wh_rg_no"></span></p>
+            <p><strong>Chassic No:</strong><span id="result_chassis_no"></span></p>
+            <p><strong>Engine No:</strong><span id="result_eng_no"></span></p>
+
+
+            <p><strong>Name:</strong><span id="result_name"></span></p>
+            <p><strong>Email:</strong><span id="result_email"></span></p>
+            <p><strong>Phone No:</strong><span id="result_phone"></span></p>
+            <p><strong>Address:</strong><span id="result_address"></span></p>
+
+            <label for="accept-terms">
+                <input type="checkbox" id="accept-terms" required checked>
+                I agree to HSRP <a href="terms.html" target="_blank">Terms & Conditions</a>
+            </label>
+            
+            <div class="paym-btns">
+                <button id="to-payment">confirm and pay</button>
+                <button type="button" id="pay-later-to-home">Pay Later</button>
+                <div id="success-alert" class="alert alert-success" style="display: none;">
+                    Pay Later is successful! Returning to the home page.
+                </div>
+            </div> -->
+
+
+            
+
+         <!-- </div> -->
+
+        <!-- Payment Page -->
+        <!-- <div id="payment-details" class="section">
+            <h2>Payment Details</h2>
+            <form id="payment-details-form">
+                <label for="card">Scan and Pay:</label>
+                <img src="./assets/payment_qr.jpg" height="400px" width="300px" alt="">
+        
+                <label for="upload">Upload: <spa class="req_field">*</spa></label>
+                <input type="file" id="Payment" name="pay" placeholder="" required>
+        
+                <div class="buttons">
+                    <button type="button" id="back-user" onclick="navigateTo('entered_details')">Back to Entered Details</button>
+                    <button type="button" id="to-home">Finish</button>
+                </div>
+            </form>
+            <div id="success-alert" class="alert alert-success" style="display: none;">
+                Payment successful! Returning to the home page.
+            </div>
+        </div>
+        </div> 
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HSRP. All rights reserved.</p>
+    </footer>
+
+    <script src="/script/script.js"></script>
+</body>
+</html> -->

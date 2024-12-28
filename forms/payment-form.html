@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/style/style.css">
+    </head>
+    <style>
+        /* General Styles */
+
+
+/* Payment Details Section */
+.qr-sec {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qr-sec label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+.qr-sec img {
+    width: 350px;
+    height: 350px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.price_content {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin: 10px 0;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form input[type="file"] {
+        width: 100%;
+    }
+
+    .qr-sec img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+    </style>
+    <body>
+            <header>
+                <div class="head-sec">
+                    <h1>HSRP Online Booking</h1>
+        
+                <nav>
+                    <a href="#home" onclick="window.location.href='../index.html'">Home</a>
+                    <a href="#contact-us" onclick="window.location.href='../contact.html'">Contact Us</a>
+                    <a href="#privacy-policy">Privacy Policy</a>
+                    <a href="#refund-policy" onclick="window.location.href='../refund_policy.html'">Refund Policy</a>
+                    <a href="#terms-conditions" onclick="window.location.href='../terms.html'">Terms & Conditions</a>
+                </nav>
+                </div>
+                <marquee behavior="scroll" direction="left" class="float-content">Booking Open for all states <span>Book Your High-Security Number Plates (HSRP) - HSRP Booking Now Open</span>  - It's now easier than ever to re-gister your Wheeler and Book the mandatory High-Security Number Plates</marquee>
+        
+            </header>
+        <div class="container" id="payment-details">
+            
+            <div id="payment-details" class="">
+                <h2>Payment Details</h2>
+                <form id="payment-details-form">
+                   <div class="qr-sec">
+                    <label for="qr">Scan and Pay:</label>
+                    <img src="/assets/payment_qr.png" id="qr" height="400px" width="300px" alt="">
+                   </div>
+                    <p class="price_content" id="price_content"><strong>Amt :</strong> "500"</p>
+            
+                    <label for="cvv">Upload:<spa class="req_field">*</spa></label>
+                    <input type="file" id="Payment" name="pay" placeholder="" required>
+            
+                    <div class="buttons">
+                        <button type="button" id="back-user" onclick="window.location.href='entered-form.html'">Back to User Details</button>
+                        <button type="button" id="to-home">Finish</button>
+                    </div>
+                </form>
+                <div id="success-alert" class="alert alert-success" style="display: none;">
+                    Payment successful! Returning to the home page.
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 HSRP. All rights reserved.</p>
+        </footer>
+    
+        <script src=" /script/script.js"></script>
+        
+    </body>
+</html>
