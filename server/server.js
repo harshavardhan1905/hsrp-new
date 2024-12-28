@@ -46,30 +46,30 @@ const startServer = async () => {
         app.set('db', db);  // Save db connection in app object if needed
 
         // Serve HTML Pages
-        app.get('/', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
         });
 
-        app.get('/forms/user-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/user-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'user-form.html'));
         });
 
-        app.get('/forms/booking-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/booking-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'booking-form.html'));
         });
 
-        app.get('/forms/payment-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/payment-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'payment-form.html'));
         });
 
-        app.get('/forms/entered-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/entered-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'entered-form.html'));
         });
 
         // API Routes
 
         // Add Booking Details
-        app.post('/api/booking-details', async (req, res) => {
+        app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/booking-details', async (req, res) => {
             const { state, wheeler_reg_no, chassis_no, engine_no } = req.body;
             console.log({ state, wheeler_reg_no, chassis_no, engine_no });
 
@@ -86,7 +86,7 @@ const startServer = async () => {
         });
 
         // Add User Details
-        app.post('/api/user-details', async (req, res) => {
+        app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/user-details', async (req, res) => {
             const { wheeler_reg, name, email, phone, address } = req.body;
             console.log({ wheeler_reg, name, email, phone, address });
 
@@ -102,7 +102,7 @@ const startServer = async () => {
         });
 
         // Get Details by Booking ID
-        app.get('/api/details/:id', async (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/api/details/:id', async (req, res) => {
             const { id } = req.params;
             console.log(id);
             
@@ -125,7 +125,7 @@ const startServer = async () => {
 
         // Start Server
         app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
+            console.log(`Server running on https://hsrp-harshavardhan1905s-projects.vercel.app`);
         });
 
     } catch (err) {
