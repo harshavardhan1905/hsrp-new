@@ -2,14 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const { createClient } = require('@libsql/client');
+require('dotenv').config();
 
 const app = express();
 const PORT = 5000;
-
 const db = createClient({
-    url: "libsql://hsrpbooking-hsrp.turso.io",
-    authToken: "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MzU0NDk3MjIsImlkIjoiYjc5YTE5ZDgtZGY2Yy00MjMzLWI1NTctOTkzNDNhZDE4ZTIyIn0.J2rSHYn_a4cMLq5ZOvybxY1quIGqgrv2WN7EZO3Esi-kCBKH1uvFPWUWScQQdUVn6Sg7bGObM3Us1Noo8g4cDQ"
+    url: process.env.LIBSQL_URL,
+    authToken: process.env.LIBSQL_AUTH_TOKEN,
 });
+
 
 app.use(express.json());
 app.use(cors());
