@@ -11,7 +11,16 @@ header {
     padding: 1rem 0;
     text-align: center;
 }
-
+main{
+    max-width: 100%;
+}
+body{
+    position: relative;
+}
+.index-con{
+    position: absolute;
+    /* max-width: 100%; */
+}
 nav {
     background-color: #0056b3;
     padding: 0.5rem 0;
@@ -220,7 +229,7 @@ footer p {
     }
 }
 .counts{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
 }
 .counts label{
     font-weight: unset;
