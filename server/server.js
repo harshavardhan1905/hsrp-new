@@ -39,7 +39,7 @@ app.get('/entered-form.html', (req, res) => {
 // API Routes
 
 // Add Booking Details
-app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/booking-details', (req, res) => {
+app.post('/api/booking-details', (req, res) => {
     const { state, wheeler_reg_no, chassis_no, engine_no } = req.body;
     const query = `
         INSERT INTO bookings (state, wheeler_reg_no, chassis_no, engine_no)
@@ -57,7 +57,7 @@ app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/booking-detail
 
 
 // Add User Details
-app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/user-details', (req, res) => {
+app.post('/api/user-details', (req, res) => {
     const { wheeler_reg, name, email, phone, address } = req.body;
     const query = `
         INSERT INTO users (wheeler_reg, name, email, phone, address)
@@ -74,8 +74,8 @@ app.post('https://hsrp-harshavardhan1905s-projects.vercel.app/api/user-details',
 });
 
 // Get Details by Booking ID
-app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/api/details/:id', (req, res) => {
-
+app.get('/api/details/:id', (req, res) => {
+    
     const { id } = req.params;
     const query = `
         SELECT b.state, b.wheeler_reg_no, b.chassis_no, b.engine_no, u.name, u.email, u.phone, u.address
@@ -99,6 +99,6 @@ app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/api/details/:id', (
 
 // Start Server
 app.listen(PORT, () => {
-    console.log(`Server running on port https://hsrp-harshavardhan1905s-projects.vercel.app`);
+    console.log(`Server running on port ${PORT}`);
 });
 
