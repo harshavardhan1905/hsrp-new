@@ -1,16 +1,35 @@
 const express = require('express');
+const app = express();
+
+const mysql = require('mysql2/promise');
+const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
-const { createClient } = require('@libsql/client');
-require('dotenv').config();
+dotenv.config();
 
-const app = express();
-const PORT = 5000;
-const db = createClient({
-    url: process.env.LIBSQL_URL,
-    authToken: process.env.LIBSQL_AUTH_TOKEN,
+// Async function to connect to MySQL database
+async function initializeDB() {
+    const db = await mysql.createConnection({
+        host: "beouhrafzvbh0ppl1uz3-mysql.services.clever-cloud.com",
+        user: "ug1luv0plplcodix",
+        password: "erpjWP2dsajWEUGbjoBt",
+        database:"beouhrafzvbh0ppl1uz3",
+        waitForConnections: process.env.DB_WAIT_FOR_CONNECTIONS === 'true',
+        connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT, 10),
+        queueLimit: parseInt(process.env.DB_QUEUE_LIMIT, 10),
+    });
+    console.log('Database connected successfully');
+    return db;
+}
+
+// Initialize the database connection
+let db;
+initializeDB().then(connection => {
+    db = connection; // Store the db connection for later use
+}).catch(error => {
+    console.error('Error connecting to the database:', error);
+    process.exit(1); // Exit the process if the DB connection fails
 });
-
 
 app.use(express.json());
 app.use(cors());
@@ -56,7 +75,6 @@ app.post('/api/booking-details', (req, res) => {
         });
 });
 
-
 // Add User Details
 app.post('/api/user-details', (req, res) => {
     const { wheeler_reg, name, email, phone, address } = req.body;
@@ -76,7 +94,6 @@ app.post('/api/user-details', (req, res) => {
 
 // Get Details by Booking ID
 app.get('/api/details/:id', (req, res) => {
-    
     const { id } = req.params;
     const query = `
         SELECT b.state, b.wheeler_reg_no, b.chassis_no, b.engine_no, u.name, u.email, u.phone, u.address
@@ -86,8 +103,8 @@ app.get('/api/details/:id', (req, res) => {
     `;
     db.execute(query, [id])
         .then((results) => {
-            if (results.rows.length > 0) {
-                res.send(results.rows[0]);
+            if (results[0].length > 0) {
+                res.send(results[0][0]);
             } else {
                 res.status(404).send({ error: 'No details found for the given ID' });
             }
@@ -99,7 +116,5 @@ app.get('/api/details/:id', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
