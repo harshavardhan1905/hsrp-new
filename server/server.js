@@ -50,19 +50,19 @@ const startServer = async () => {
             res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
         });
 
-        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/user-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/user-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'user-form.html'));
         });
 
-        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/booking-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/booking-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'booking-form.html'));
         });
 
-        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/payment-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/payment-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'payment-form.html'));
         });
 
-        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/forms/entered-form.html', (req, res) => {
+        app.get('https://hsrp-harshavardhan1905s-projects.vercel.app/entered-form.html', (req, res) => {
             res.sendFile(path.join(__dirname, '..', 'public', 'entered-form.html'));
         });
 
