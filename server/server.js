@@ -10,10 +10,10 @@ dotenv.config();
 // Async function to connect to MySQL database
 async function initializeDB() {
     const db = await mysql.createConnection({
-        host: "beouhrafzvbh0ppl1uz3-mysql.services.clever-cloud.com",
-        user: "ug1luv0plplcodix",
-        password: "erpjWP2dsajWEUGbjoBt",
-        database:"beouhrafzvbh0ppl1uz3",
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
         waitForConnections: process.env.DB_WAIT_FOR_CONNECTIONS === 'true',
         connectionLimit: parseInt(process.env.DB_CONNECTION_LIMIT, 10),
         queueLimit: parseInt(process.env.DB_QUEUE_LIMIT, 10),
