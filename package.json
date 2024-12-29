@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "@libsql/client": "^0.14.0",
+    "@vercel/edge-config": "^1.4.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
