@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Check if the current page is 'entered-form.html'
-    if (window.location.pathname === "/entered-form.html") {
+    if (window.location.pathname === "/forms/entered-form.html") {
         init(); // Call the function to initialize the page
     }
 
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to fetch data by wheeler_reg_no
     async function fetchDataByWheelerRegNo(wheelerRegNo) {
         try {
-            const response = await fetch(`https://hsrp-harshavardhan1905s-projects.vercel.app/api/details/${encodeURIComponent(wheelerRegNo)}`);
+            const response = await fetch(`https://hsrp-harshavardhan1905s-projects.vercel.app       /api/details/${encodeURIComponent(wheelerRegNo)}`);
             if (!response.ok) {
                 throw new Error("Failed to fetch details");
             }
