@@ -133,23 +133,24 @@ function saveUserDetails( wheelerRegNo, name, email, phone, address) {
 document.addEventListener('DOMContentLoaded', () => {
     // Booking Form Navigation
     document.getElementById('to-user')?.addEventListener('click', () => {
-        navigateWithValidation(document.getElementById('booking-details-form'), '/forms/user-form.html');
+        navigateWithValidation(document.getElementById('booking-details-form'), '/user-form.html');
     });
-
+    
     document.getElementById('back-home')?.addEventListener('click', () => {
-        navigateWithValidation(document.getElementById('booking-details-form'), '../index.html');
+        navigateWithValidation(document.getElementById('booking-details-form'), '/index.html');
     });
-
+    
     document.getElementById('back-booking')?.addEventListener('click', () => {
-        navigateWithValidation(document.getElementById('user-details-form'), 'booking-form.html');
+        navigateWithValidation(document.getElementById('user-details-form'), '/booking-form.html');
     });
-
+    
     document.getElementById('to-entered_details')?.addEventListener('click', () => {
-        navigateWithValidation(document.getElementById('user-details-form'), 'entered-form.html');
+        navigateWithValidation(document.getElementById('user-details-form'), '/entered-form.html');
     });
+    
 
     // Payment Navigation
-    handleCheckboxInteraction('accept-terms', 'to-payment', '/forms/payment-form.html');
+    handleCheckboxInteraction('accept-terms', 'to-payment', '/payment-form.html');
     handleCheckboxInteraction('accept-terms', 'pay-later-to-home', '/index.html');
 
     document.getElementById('to-home')?.addEventListener('click', () => {
@@ -199,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to fetch data by wheeler_reg_no
     async function fetchDataByWheelerRegNo(wheelerRegNo) {
         try {
-            const response = await fetch(`https://hsrp-harshavardhan1905s-projects.vercel.app/api/details/${encodeURIComponent(wheelerRegNo)}`);
+            const response = await fetch(`https://hsrp-harshavardhan1905s-projects.vercel.app       /api/details/${encodeURIComponent(wheelerRegNo)}`);
             if (!response.ok) {
                 throw new Error("Failed to fetch details");
             }
